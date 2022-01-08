@@ -1,0 +1,9 @@
+h1 {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+body {
+    background-color: #1e1e1e;
+}
