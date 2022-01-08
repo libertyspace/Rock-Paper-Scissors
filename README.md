@@ -1,6 +1,6 @@
 # tikTakToe
-#This is my first project in Javascript from the Oding Projet.
+#This is my first project in Javascript from the Odin Project.
 
-#The task for this Exercise is to make a working Javascript game "Tick Tack Toe".
+#The task for this exercise is to make a working Javascript game "Tick Tack Toe".
 
 
