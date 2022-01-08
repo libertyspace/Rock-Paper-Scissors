@@ -2,7 +2,6 @@ function computerPlay (min, max){
     min = Math.ceil(min);
     max = Math.ceil(max);
     let x = Math.floor(Math.random()*(max - min + 1)) + min;
-    console.log(x);
     if (x == 0) {
         return "rock";
     } else if (x == 1) {
@@ -15,7 +14,7 @@ function computerPlay (min, max){
 function playerPlay(){
     let playerPlayed = prompt("Please type in your decision. Rock, Paper, Scissors and press Enter.");
     playerPlayed = playerPlayed.toLowerCase();
-    if(playerPlayed == "rock") {
+    if((playerPlayed == "rock") || (playerPlayed == "rocks") || (playerPlayed == "stone")) {
         return "rock";
     } else if ((playerPlayed == "paper") || (playerPlayed == "papers" )) {
         return "paper";
@@ -27,9 +26,13 @@ function playerPlay(){
 } 
 
 function playRound(playerPlayed, computerPlayed) {
-    if ((playerPlayed == "rock" && computerPlayed == "scissor") || (playerPlayed == "scissor" && computerPlayed == "paper") || (playerPlayed == "paper" && computerPlayed == "rock")) {
+    if ((playerPlayed == "rock" && computerPlayed == "scissor") || 
+        (playerPlayed == "scissor" && computerPlayed == "paper") || 
+        (playerPlayed == "paper" && computerPlayed == "rock")) {
         return "player";
-    } else if ((playerPlayed == "rock" &&  computerPlayed == "paper") || (playerPlayed == "scissor" && computerPlayed == "rock") || (playerPlayed == "paper" && computerPlayed == "scissor")) {
+    } else if ((playerPlayed == "rock" &&  computerPlayed == "paper") || 
+                (playerPlayed == "scissor" && computerPlayed == "rock") || 
+                (playerPlayed == "paper" && computerPlayed == "scissor")) {
         return "computer";
     } else {
         return "even"
@@ -41,8 +44,9 @@ function playGame () {
     let computerScore = 0;
     console.log("Welcome to liberties Tic Tac Toe Game!");
     console.log("The one who wins more rounds wins!");
+    let playerName = prompt("Please enter your name: ")
     for (let i = 0; i < 5; i++) {
-        console.log("Round " + (i+1) + " !")
+        console.log("Round " + (i+1) + "!")
         let playerPlayed = playerPlay();
         let computerPlayed = computerPlay(0, 2);
         if (playerPlayed == undefined || computerPlayed == undefined) {
@@ -52,14 +56,15 @@ function playGame () {
         let wins = playRound(playerPlayed, computerPlayed);
         if (wins == "player") {
             playerScore++;
-            console.log(`Player played: ${playerPlayed}\n Computer played: ${computerPlayed}\n Player wins this round!!! \n ***Scoreboard*** \n Player: ${playerScore}\n Computer: ${computerScore}`);
+            console.log(`${playerName} played: ${playerPlayed}\nComputer played: ${computerPlayed}\n${playerName} wins this round!!! \n***Scoreboard*** \n${playerName}: ${playerScore}\nComputer: ${computerScore}`);
         } else if (wins == "computer") {
             computerScore++;
-            console.log(`Player played: ${playerPlayed}\n Computer played: ${computerPlayed}\n Computer wins this round!!! \n ***Scoreboard*** \n Player: ${playerScore}\n Computer: ${computerScore}`);
+            console.log(`${playerName} played: ${playerPlayed}\nComputer played: ${computerPlayed}\nComputer wins this round!!! \n***Scoreboard*** \n${playerName}: ${playerScore}\nComputer: ${computerScore}`);
         } else if (wins == "even") {
-            computerScore++;
-            playerScore++;
-            console.log(`Player played: ${playerPlayed}\n Computer played: ${computerPlayed}\n Nobody wins this round! Both players get a point. \n ***Scoreboard*** \n Player: ${playerScore}\n Computer: ${computerScore}`);
+            console.log(`${playerName} played: ${playerPlayed}\nComputer played: ${computerPlayed}\nNobody wins this round! \n***Scoreboard*** \n${playerName}: ${playerScore}\nComputer: ${computerScore}`);
+        }
+        if ((playerScore == 3) || (computerScore == 3)) {
+            break;
         }
      }
      if (playerScore > computerScore) {
