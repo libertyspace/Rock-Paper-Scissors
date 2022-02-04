@@ -167,7 +167,7 @@ let playerScore = 0;
 let computerScore = 0;
 let playerPlayed;
 let computerPlayed;
-let playerName = prompt("Hi, wie heißt du?");
+let playerName = "Mato";
 
 const body = document.querySelector("#pageFlex");
 const gameBar = document.querySelector("#gameBar");
