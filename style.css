@@ -1,237 +1,244 @@
 h2 {
-    font-family: 'Gloria Hallelujah', cursive;
-    display: flex;
-    justify-content: center;
-    color: aliceblue;
-    align-items: baseline;
-    
-    
+  font-family: "Gloria Hallelujah", cursive;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  align-items: baseline;
 }
+
 body {
-    background-color: #1e1e1e;
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    border-radius: 00.5em;
-    
-    
-    
+  background-color: #1e1e1e;
+  font-family: "Nunito", sans-serif;
+  font-size: 1vw;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  /* border-radius: 00.5em; */
+  width: 100%;
 }
 
 header {
-    height: 300px ;
-    width: 1080px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    background-color: #552a2a;
-    align-items: center;
-    
-    border-radius: 0.5em 0.5em 0em 0em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #552a2a;
+  align-items: center;
+  border-radius: 0.5em 0.5em 0em 0em;
 
-    border-bottom: 1px black solid;
+  border-bottom: 1px black solid;
 }
 
-
-
-
-
-
 #pageFlex {
-    border: solid 1px white;
-    width: 1080px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:baseline;
-    border-radius: 0.5em;
+  border: solid 1px white;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5em;
 }
 
 #buttons {
-    display: flex;
-    justify-content: space-evenly;
-    /* width: 250px;  */
+  display: flex;
+  justify-content: space-evenly;
 }
-
-
 
 #rock,
 #paper,
-#scissors {
-    border-radius: 100em;
-    /* width: 200px;
-    height: 80px; */
-    margin: 1em;
-    padding: 10px 50px;
-    border-width: 5px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-    font-weight: bolder;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#scissors,
+#new-game-button {
+  border-radius: 100em;
+  margin: 1em;
+  padding: 10px 50px;
+  border-width: 5px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5vw;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#rock {
-    background-color: antiquewhite;
-    color: rgb(105, 25, 25);
-    border-color: #b14d3b;
-    
+#rock,
+#new-game-button {
+  background-color: #552a2a;
+  color: #fbfffe;
+  border-color: #b56969;
 }
 
 #paper {
-    background-color: aliceblue;
-    border-color: #6677ac;
-    color: #495579;
-    
+  background-color: #1f4a1c;
+  border-color: #63c15c;
+  color: #d5f2e3;
 }
 
 #scissors {
-    background-color: rgb(230, 255, 194);
-    border-color: rgb(79, 117, 21);
-    color: rgb(40, 59, 11);
-
+  background-color: #33353e;
+  border-color: #8b8c89;
+  color: #e7ecef;
 }
+
+/* #new-game-button {
+  background-color: #02182b;
+  border-color: #d7263d;
+  color: #0197f6;
+} */
 
 #gameBar {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(26, 26, 26);
-    color: white;
-    border-bottom: 1px black solid;
-    align-items: center;
-    width: 1080px;
-    order: 3
-    
-    
+  display: flex;
+  justify-content: center;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  border-bottom: 1px black solid;
+  /* align-items: center; */
+  width: 100%;
+  order: 3;
 }
 
-#signs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 0.5em;
-    width: 1080px;
-    height: 100px;
-    font-size: 120px;
-    order: 1;
-
+.playerSide,
+.midSide,
+.computerSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 33%;
 }
 
-#names {
-    display: flex;
-    /* margin: 10px; */
-    justify-content: space-evenly;
-    width: 1080px;
-    
-    order: 0;
-    
-    
+.playerSide {
+  order: 0;
 }
 
-#scores {
-    display: flex;
-    justify-content: space-evenly;
-    width: 1080px;
-    padding: 50px 50px 0px 50px;
-    font-size: 36px;
-    height: 100px;
-    
-    
-    order: 2
+.midSide {
+  width: 20%;
+  order: 1;
 
+  /* background-color: #b14d3b; */
+}
+
+.computerSide {
+  order: 2;
+}
+
+.mirrored {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#signs,
+#signs2,
+#names,
+#names2,
+#scores,
+#scores2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signs,
+#signs2 {
+  height: 100%;
+  width: 100%;
+  font-size: 6vw;
+  order: 0;
+  padding: 50px 0px 50px 0px;
+}
+
+#names,
+#names2 {
+  width: 100%;
+  height: 100%;
+}
+
+#scores,
+#scores2 {
+  width: 100%;
+  padding: 50px 0px 50px 0px;
+  font-size: 4vw;
+  /* height: 20%; */
+}
+
+#midSign {
+  color: red;
+  font-size: 5vw;
+}
+
+#mid-text {
+  padding: 0em;
 }
 
 #textArea {
-    border-bottom: 1px black solid;
-    width: 1080px;
-    background-color: #262d42;
-    order: 4;
+  border-bottom: 1px black solid;
+  width: 100%;
+  background-color: #262d42;
+  order: 4;
 }
 
 #footer {
-    
-    width: 1080px;
-    display: flex;
-    justify-content: center;
-    /* border: white 1px solid; */
-    order: 5;
-    background-color: rgb(26, 26, 26);
-    border-radius: 00.5em;
-}
-
-.pics {
-    padding-top: 20px;
-    font-size: 100px;
-    
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: white 1px solid; */
+  order: 5;
+  background-color: rgb(26, 26, 26);
+  border-radius: 00.5em;
 }
 
 .gameProgress {
-    color: white;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rodrigo {
-    
-    font-family: 'Press Start 2P', cursive;
-    
-    display: flex;
-    justify-content:center;
-    align-self: center;
-    
-    
-    
+  font-family: "Press Start 2P", cursive;
+  font-size: 1vw;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .gloria {
-    font-family: 'Gloria Hallelujah', sans-serif;
-};
+  font-family: "Gloria Hallelujah", sans-serif;
+}
 
 #rodrigo {
-    font-size: 24px;
-    font-family: 'Press Start 2P', cursive;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-};
+  font-size: 24px;
+  font-family: "Press Start 2P", cursive;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
 
 #playerName {
-    color: red;
-    
-};
+  color: White;
+  font-size: 1.6vw;
+}
 
 #computerName {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 3px;
-};
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.6vw;
+}
 
 #rodrigoContainer {
-    display: flex;
-    width: 1080px;
-    justify-content: center; 
-    
-    
-    
-    
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 #derGeraet {
-    font-family: 'Gloria Hallelujah', sans-serif;
-    color: white;
-    font-size: 20px;
-    color: black;
-    display: flex;
-    
-    padding-left: 1em;
-
-    
-    
-    
+  font-family: "Gloria Hallelujah", sans-serif;
+  color: white;
+  font-size: 1vw;
+  color: black;
+  display: flex;
+  padding-left: 1em;
 }
-
